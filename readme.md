@@ -85,6 +85,8 @@ git clone git@github:tiantangsuantai/gitskills.git
                                                             HEAD
 
 假如我们在dev上的工作完成了，就可以把dev合并到master上。Git怎么合并呢？最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：
+
+
                                                  HEAD
                                                    │
                                                    │
@@ -107,6 +109,11 @@ git checkout -b dev
 # 相当于：
 git branch dev
 git checkout dev
+
+# 切换之后再提交
+git add filename
+git commit -m "xxx"
+git push origin
 
 
 ```
