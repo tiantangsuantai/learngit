@@ -115,6 +115,12 @@ git add filename
 git commit -m "xxx"
 git push origin
 
+# 融合分支到master
+git merge branchName
+
+# 删除分支
+git branch -d dev
+
 
 ```
 
