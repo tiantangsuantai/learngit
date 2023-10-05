@@ -121,9 +121,13 @@ git merge branchName
 # 删除分支
 git branch -d dev
 
+# 切换的另外一个
+git switch -c dev
+
+git switch master
+
 
 ```
 
-this is master branch test word
-
+fucking the mess world!!!
 
