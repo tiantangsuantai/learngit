@@ -127,7 +127,7 @@ git switch -c dev
 git switch master
 
 
+# 查看分支情况
+git log --graph --pretty=oneline --abbrev-commit
+
 ```
-
-fucking the mess world!!!
-
