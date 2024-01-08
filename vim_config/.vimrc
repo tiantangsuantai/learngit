@@ -1,9 +1,9 @@
 source ~/.vim/config/bash_config.vim
-
+source ~/.vim/config/keymap.vim
 
 " plugins manage
 call plug#begin('~/.vim/plugged')
-  " Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline'
   Plug 'scrooloose/nerdtree'
   Plug 'tomtom/tcomment_vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'rust-lang/rust.vim'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'vim-latex/vim-latex'
+  Plug 'matze/vim-move'
 call plug#end()
 
 " coc extensions

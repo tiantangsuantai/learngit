@@ -1,13 +1,14 @@
 
 " let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enable = 1
-let g:airline#extensions#left_alt_sep = '|'
+let g:airline#extensions#left_alt_sep = '>'
 
 " Nerdtree
 nnoremap <silent> <F2> :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
    \ quit | endif
+
 " rust.vim自动格式化rs文件
 let g:rustfmt_autosave = 1
 
@@ -36,6 +37,7 @@ inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
@@ -66,14 +68,14 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
+" Use <leader>k to show documentation in preview window
+nnoremap <silent><leader>k :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
   else
-    call feedkeys('K', 'in')
+    call feedkeys('k', 'in')
   endif
 endfunction
 
@@ -157,28 +159,22 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" " Manage extensions
+" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" " Show commands
+" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" " Find symbol of current document
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" " Search workspace symbols
+" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" " Do default action for next item
+" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" " Do default action for previous item
+" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" " Resume latest coc list
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-
-" vim-latex config
-let g:Tex_CompileRule_dvi="latex -src-specials -interaction=nonstopmode $*"
-imap <F3> <ESC>:w<CR>:!latexmk -xelatex -file-line-error -halt-on-error -synctex=1 -interaction=batchmode % && open %:r.pdf<CR><CR>
-nmap <F3> <ESC>:w<CR>:!latexmk -xelatex -file-line-error -halt-on-error -synctex=1 -interaction=batchmode % && open  %:r.pdf<CR><CR>
-let mapleader = ' '
 " 使用tab自动补全， shift+tab制表符
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -195,5 +191,10 @@ endfunction
 let Tex_FoldedSections=""
 let Tex_FoldedEnvironments=""
 let Tex_FoldedMisc=""
-
 let g:coc_snippet_next = '<tab>'
+
+" vim-move setting
+let g:move_key_modifier = 'C'
+let g:move_key_modifier_visualmode = 'C'
+
+
