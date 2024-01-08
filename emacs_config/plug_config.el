@@ -174,11 +174,11 @@
   (c++-mode . lsp-deferred)
   (c++-mode . c-toggle-hungry-state))
 
-(projectile-mode +1)
-;; Recommended keymap prefix on macOS
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-;; Recommended keymap prefix on Windows/Linux
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;; (projectile-mode +1)
+;; ;; Recommended keymap prefix on macOS
+;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+;; ;; Recommended keymap prefix on Windows/Linux
+;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;;; plug_config.el ends here
 (provide 'plug_config)
